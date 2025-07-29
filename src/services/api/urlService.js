@@ -44,17 +44,43 @@ class URLService {
     return item ? { ...item } : null;
   }
 
+validateCustomCode(code) {
+    if (!code) return false;
+    const regex = /^[a-zA-Z0-9-]+$/;
+    return regex.test(code) && code.length >= 3 && code.length <= 20;
+  }
+
   async create(urlData) {
     await this.delay(400);
     const data = this.getData();
     const maxId = data.length > 0 ? Math.max(...data.map(u => u.Id)) : 0;
     
     let shortCode;
-    let attempts = 0;
-    do {
-      shortCode = this.generateShortCode();
-      attempts++;
-    } while (data.some(u => u.shortCode === shortCode) && attempts < 10);
+    
+    // Handle custom code
+    if (urlData.customCode) {
+      if (!this.validateCustomCode(urlData.customCode)) {
+        throw new Error('Invalid custom code format');
+      }
+      
+      // Check if custom code already exists
+      if (data.some(u => u.shortCode === urlData.customCode)) {
+        throw new Error('Custom code already exists');
+      }
+      
+      shortCode = urlData.customCode;
+    } else {
+      // Generate random code
+      let attempts = 0;
+      do {
+        shortCode = this.generateShortCode();
+        attempts++;
+      } while (data.some(u => u.shortCode === shortCode) && attempts < 10);
+      
+      if (attempts >= 10) {
+        throw new Error('Unable to generate unique short code');
+      }
+    }
 
     const newUrl = {
       Id: maxId + 1,
