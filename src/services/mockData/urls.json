@@ -1,0 +1,50 @@
+[
+  {
+    "Id": 1,
+    "originalUrl": "https://www.example.com/very-long-url-that-needs-to-be-shortened-for-better-sharing",
+    "shortCode": "abc123",
+    "clicks": 24,
+    "createdAt": "2024-01-15T10:30:00.000Z",
+    "lastClickedAt": "2024-01-16T14:22:00.000Z"
+  },
+  {
+    "Id": 2,
+    "originalUrl": "https://docs.google.com/document/d/1234567890abcdef/edit?usp=sharing",
+    "shortCode": "def456",
+    "clicks": 15,
+    "createdAt": "2024-01-14T16:45:00.000Z",
+    "lastClickedAt": "2024-01-16T09:15:00.000Z"
+  },
+  {
+    "Id": 3,
+    "originalUrl": "https://github.com/username/repository-name/blob/main/README.md",
+    "shortCode": "gh789x",
+    "clicks": 8,
+    "createdAt": "2024-01-13T12:20:00.000Z",
+    "lastClickedAt": "2024-01-15T18:30:00.000Z"
+  },
+  {
+    "Id": 4,
+    "originalUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=PLrAXtmRdnEQy4QXUMJnv2Krf8Tt7z6k0o",
+    "shortCode": "yt2024",
+    "clicks": 42,
+    "createdAt": "2024-01-12T08:15:00.000Z",
+    "lastClickedAt": "2024-01-16T11:45:00.000Z"
+  },
+  {
+    "Id": 5,
+    "originalUrl": "https://marketplace.atlassian.com/apps/1234567/example-app?hosting=cloud&tab=overview",
+    "shortCode": "atlsn5",
+    "clicks": 3,
+    "createdAt": "2024-01-11T14:30:00.000Z",
+    "lastClickedAt": "2024-01-14T16:20:00.000Z"
+  },
+  {
+    "Id": 6,
+    "originalUrl": "https://www.linkedin.com/in/johndoe/details/experience/",
+    "shortCode": "ln2024",
+    "clicks": 0,
+    "createdAt": "2024-01-16T09:00:00.000Z",
+    "lastClickedAt": null
+  }
+]
